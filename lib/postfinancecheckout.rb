@@ -2,13 +2,12 @@ require "postfinancecheckout/version"
 require "postfinancecheckout/engine"
 
 module Postfinancecheckout
-  class << self
-    def configuration
-      @configuration ||= Configuration.new
-    end
+  extend Dry::Configurable
 
-    def configure
-      yield(configuration)
-    end
-  end
+  setting :on_success
+  setting :on_failure
+
+  setting :space_id
+  setting :app_user_id
+  setting :app_user_key
 end

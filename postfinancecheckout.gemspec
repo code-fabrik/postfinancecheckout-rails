@@ -24,4 +24,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "rails", ">= 7.0.6"
   spec.add_dependency "postfinancecheckout-ruby-sdk", ">= 3.3.0"
+  spec.add_dependency "dry-configurable", ">= 1.1.0"
 end

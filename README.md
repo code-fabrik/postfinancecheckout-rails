@@ -17,14 +17,14 @@ Postfinancecheckout.configure do |config|
   config.app_user_id = 56789
   config.app_user_key = "my_secret_key"
 
-  config.on_success = -> (transaction_id)
+  config.on_success = -> (transaction_id) do
     order = Order.find_by(transaction_id: transaction_id)
     order.update(status: :paid)
 
     PaymentSuccessMailer.deliver_later(order)
   end
 
-  config.on_failure = -> do (transaction_id)
+  config.on_failure = -> (transaction_id) do
     order = Order.find_by(transaction_id: transaction_id)
     order.update(status: :failed)
 

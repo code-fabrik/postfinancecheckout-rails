@@ -47,15 +47,15 @@ module Postfinancecheckout
     private
 
     def space_id
-      Postfinancecheckout::Configuration.space_id
+      Postfinancecheckout.config.space_id
     end
 
     def app_user_id
-      Postfinancecheckout::Configuration.app_user_id
+      Postfinancecheckout.config.app_user_id
     end
 
     def app_user_key
-      Postfinancecheckout::Configuration.app_user_key
+      Postfinancecheckout.config.app_user_key
     end
 
     def ensure_id!
