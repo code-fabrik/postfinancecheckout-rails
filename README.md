@@ -1,4 +1,4 @@
-# Postfinancecheckout
+# Postfinance Checkout
 Short description and motivation.
 
 ## Usage
@@ -57,7 +57,7 @@ redirect_to transaction.payment_url
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "postfinancecheckout"
+gem "postfinancecheckout-rails"
 ```
 
 And then execute:
@@ -67,7 +67,7 @@ $ bundle
 
 Or install it yourself as:
 ```bash
-$ gem install postfinancecheckout
+$ gem install postfinancecheckout-rails
 ```
 
 ## Contributing

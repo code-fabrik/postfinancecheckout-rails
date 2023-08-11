@@ -1,7 +1,7 @@
 require_relative "lib/postfinancecheckout/version"
 
 Gem::Specification.new do |spec|
-  spec.name        = "postfinancecheckout"
+  spec.name        = "postfinancecheckout-rails"
   spec.version     = Postfinancecheckout::VERSION
   spec.authors     = ["Lukas_Skywalker"]
   spec.email       = ["lukas.diener@hotmail.com"]
