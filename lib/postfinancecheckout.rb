@@ -1,5 +1,7 @@
+require 'dry-configurable'
 require "postfinancecheckout/version"
 require "postfinancecheckout/engine"
+require "postfinancecheckout/transaction"
 
 module Postfinancecheckout
   extend Dry::Configurable
