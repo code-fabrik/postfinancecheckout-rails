@@ -4,12 +4,14 @@ module Postfinancecheckout
   class Transaction
     attr_reader :id
 
-    def initialize(amount: 0, email: '', address: {}, order_number: '', id: nil)
+    def initialize(amount: 0, email: '', address: {}, order_number: '', id: nil, success_url: '', failure_url: '')
       @amount = amount
       @email = email
       @address = address
       @order_number = order_number
       @id = id
+      @success_url = success_url
+      @failure_url = failure_url
 
       PostFinanceCheckout.configure do |config|
         config.user_id = app_user_id
@@ -105,7 +107,6 @@ module Postfinancecheckout
         currency: 'CHF',
         customerEmailAddress: @email,
         customerPresence: PostFinanceCheckout::CustomersPresence::VIRTUAL_PRESENT,
-        failedUrl: "http://localhost/failure",
         invoiceMerchantReference: "Bestellung-#{@order_number}",
         language: "de_CH",
         lineItems: [
@@ -114,7 +115,8 @@ module Postfinancecheckout
         merchantReference: "order-#{@order_number}",
         shippingAddress: address_object,
         #shippingMethod: "Test Shipping",
-        successUrl: "http://localhost/success"
+        successUrl: @success_url,
+        failedUrl: @failure_url,
       })
     end
 
