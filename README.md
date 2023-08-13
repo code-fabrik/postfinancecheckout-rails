@@ -9,7 +9,7 @@ Add a `transaction_id` field to your orders model:
 rails generate migration AddTransactionIdToOrders transaction_id:string
 ```
 
-Configure the gem:
+Configure the gem and set the callbacks:
 
 ```ruby
 Postfinancecheckout.configure do |config|
@@ -33,22 +33,31 @@ Postfinancecheckout.configure do |config|
 end
 ```
 
-Create a transaction:
+Create a transaction and store the transaction ID:
 
 ```ruby
 transaction = Postfinancecheckout::Transaction.new(
-  amount: 3,
-  identifier: @order.id,
+  amount: 34.5,
+  order_number: '1234',
+  email: 'test@example.com',
   address: {
-    first_name: 'bla',
-    last_name: 'foo'
-  },
-  line_item: line_item
+    first_name: 'Testbenutzer',
+    last_name: 'Muster',
+    street: 'Hauptstrasse 123',
+    post_code: 3019,
+    city: 'Chäs und Brot',
+    state: 'BE',
+    country_code: 'CH'
+  }
 )
 transaction.save
 
 @order.update(transaction_id: transaction.id)
+```
 
+Once you have saved the transaction, generate the payment URL and redirect the user:
+
+```ruby
 redirect_to transaction.payment_url
 ```
 

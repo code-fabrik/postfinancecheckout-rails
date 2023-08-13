@@ -95,7 +95,7 @@ module Postfinancecheckout
         #    })
         #],
         type: PostFinanceCheckout::LineItemType::PRODUCT,
-        #uniqueId: "unique-id-product-1",
+        uniqueId: "order-#{@order_number}",
       })
     end
 
