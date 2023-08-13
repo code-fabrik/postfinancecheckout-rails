@@ -1,3 +1,5 @@
+require 'postfinancecheckout-ruby-sdk'
+
 module Postfinancecheckout
   class Transaction
     attr_reader :id
