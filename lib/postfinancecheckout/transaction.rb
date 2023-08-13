@@ -11,7 +11,7 @@ module Postfinancecheckout
       @order_number = order_number
       @id = id
 
-      PostFinancecheckout.configure do |config|
+      Postfinancecheckout.configure do |config|
         config.user_id = app_user_id
         config.authentication_key = app_user_key
       end
