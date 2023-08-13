@@ -73,7 +73,7 @@ module Postfinancecheckout
         emailAddress: @email,
         givenName: @address[:first_name],
         familyName: @address[:last_name],
-        street: @address[:street]
+        street: @address[:street],
         postCode: @address[:post_code],
         city: @address[:city],
         postalState: @address[:state],
