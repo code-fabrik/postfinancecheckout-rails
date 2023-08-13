@@ -68,14 +68,14 @@ module Postfinancecheckout
 
     def address_object
       PostFinanceCheckout::AddressCreate.new({
-        city: @address[:city],
-        country: @address[:country_code],
-        emailAddress: @address[:email],
-        familyName: @address[:last_name],
+        emailAddress: @email,
         givenName: @address[:first_name],
-        postCode: @address[:post_code],
-        postalState: @address[:canton],
+        familyName: @address[:last_name],
         street: @address[:street]
+        postCode: @address[:post_code],
+        city: @address[:city],
+        postalState: @address[:state],
+        country: @address[:country_code],
       })
     end
 
