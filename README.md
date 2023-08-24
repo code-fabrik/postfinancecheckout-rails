@@ -79,6 +79,20 @@ Or install it yourself as:
 $ gem install postfinancecheckout-rails
 ```
 
+## Development
+
+Build the gem:
+
+```bash
+rake build
+```
+
+Push it to rubygems.org:
+
+```bash
+rake release
+```
+
 ## Contributing
 
 Contribution directions go here.
