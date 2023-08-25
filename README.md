@@ -61,6 +61,35 @@ Once you have saved the transaction, generate the payment URL and redirect the u
 redirect_to transaction.payment_url
 ```
 
+## Webhooks
+
+Add the following webhook on the Postfinance Checkout website (Space > Settings > General):
+
+* Webhook URL: `https://example.com/postfinancecheckout/webhook`
+* Webhook listeners
+  * Name: anything
+  * Entity: Transaction
+  * Entity States: Fulfill, Failed, Decline, Voided
+
+## Credentials
+
+Open your account on [checkout.postfinance.ch](https://checkout.postfinance.ch)
+to get the following credentials:
+
+* Space ID: open your space and note the ID in the URL. An URL of `https://checkout.postfinance.ch/s/40949/space/dashboard`
+  means your space ID is 40949.
+
+Create a new "Application User", enter an arbitrary name and copy the following credentials:
+
+* App User ID: the user ID
+* App User Key: the user key
+
+Then, create a new "Role" with any name where you add at the following permissions:
+
+* Payment Processing
+
+Assign the new role to the applicatin user, as a "Space Role".
+
 ## Installation
 
 Add this line to your application's Gemfile:
