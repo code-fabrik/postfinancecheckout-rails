@@ -1,5 +1,8 @@
 # Postfinance Checkout
-Short description and motivation.
+
+Rails integration for Postfinance Checkout. Postfinance Checkout is an all-in-one solution for integrating payment methods into a webshop and for accepting in-person-payments using a banking terminal.
+
+More information on Postfinance Checkout is available from [the website](https://www.postfinance.ch/en/support/products/onlineshop-pos/questions-about-checkout-solutions.html).
 
 ## Usage
 
