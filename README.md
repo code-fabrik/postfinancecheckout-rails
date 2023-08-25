@@ -120,6 +120,12 @@ Postfinancecheckout.configure do |config|
 end
 ```
 
+Finally, to receive the webhooks, add the following line to `config/routes.rb`:
+
+```ruby
+mount Postfinancecheckout::Engine, at: "/postfinancecheckout"
+```
+
 ## Installation
 
 Add this line to your application's Gemfile:
