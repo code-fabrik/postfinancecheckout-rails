@@ -9,8 +9,6 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
-    assignees:
-    - "LukasSkywalker"
     open-pull-requests-limit: 100
     groups:
       all:
